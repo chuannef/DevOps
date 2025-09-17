@@ -1,78 +1,75 @@
-# GitHub Actions Setup Guide
+# 🚀 GitHub Actions Simple Setup Guide
 
-## Required GitHub Secrets
+## Chỉ cần 2 bước đơn giản!
 
-Để GitHub Actions CI/CD pipeline hoạt động, bạn cần thêm các secrets sau vào repository:
+### Bước 1: Tạo Docker Hub Account (2 phút)
 
-### Repository Settings > Secrets and Variables > Actions
+1. **Đăng ký Docker Hub:**
+   - Truy cập: https://hub.docker.com
+   - Đăng ký account miễn phí
+   - Ghi nhớ username của bạn
 
-### 🐳 Docker Hub Secrets
-```
-DOCKER_USERNAME     # Docker Hub username
-DOCKER_PASSWORD     # Docker Hub password hoặc access token
-```
+2. **Tạo Access Token:**
+   - Đăng nhập Docker Hub
+   - Đi đến **Account Settings** > **Security**
+   - Click **"New Access Token"**
+   - Đặt tên: "GitHub Actions"
+   - Copy token (chỉ hiện 1 lần!)
 
-### 🖥️ Server Deployment Secrets
+### Bước 2: Thêm GitHub Secrets (1 phút)
 
-#### Staging Environment
-```
-STAGING_HOST        # IP hoặc domain của staging server
-STAGING_USER        # SSH username (ví dụ: ubuntu, ec2-user)
-STAGING_SSH_KEY     # Private SSH key để kết nối đến staging server
-```
+1. **Vào GitHub Repository:**
+   - Mở: https://github.com/chuannef/DevOps
+   - Click tab **"Settings"**
+   - Sidebar: **"Secrets and variables"** > **"Actions"**
 
-#### Production Environment
-```
-PRODUCTION_HOST     # IP hoặc domain của production server
-PRODUCTION_USER     # SSH username
-PRODUCTION_SSH_KEY  # Private SSH key để kết nối đến production server
-```
+2. **Thêm 2 secrets:**
 
-### 📢 Notification Secrets
-```
-SLACK_WEBHOOK       # Slack webhook URL để nhận thông báo deployment
-```
+   **Secret 1:**
+   - Click **"New repository secret"**
+   - Name: `DOCKER_USERNAME`
+   - Secret: `chuannef` (hoặc Docker Hub username của bạn)
+   - Click **"Add secret"**
 
-## 🔧 Setup Steps
+   **Secret 2:**
+   - Click **"New repository secret"** 
+   - Name: `DOCKER_PASSWORD`
+   - Secret: Paste Docker Hub access token từ bước 1
+   - Click **"Add secret"**
 
-### 1. Tạo Docker Hub Account
+## ✅ Xong! CI/CD đã sẵn sàng
+
+### 🎯 CI/CD sẽ làm gì:
+
+1. **Khi bạn push code lên main branch:**
+   - ✅ Build Docker image
+   - ✅ Test website hoạt động
+   - ✅ Push image lên Docker Hub với tag `latest` và `commit-hash`
+
+2. **Khi tạo Pull Request:**
+   - ✅ Build và test (không push lên Docker Hub)
+
+### 🐳 Cách sử dụng Docker image sau khi CI/CD chạy:
+
 ```bash
-# Đăng ký tại https://hub.docker.com
-# Tạo repository mới: your-username/travelviet
-# Tạo access token tại Account Settings > Security
+# Pull và chạy image từ Docker Hub
+docker pull chuannef/travelviet:latest
+docker run -p 8080:80 chuannef/travelviet:latest
+
+# Truy cập: http://localhost:8080
 ```
 
-### 2. Setup SSH Keys cho Servers
-```bash
-# Tạo SSH key pair
-ssh-keygen -t rsa -b 4096 -C "github-actions@travelviet.com"
+### 📊 Theo dõi CI/CD:
 
-# Copy public key lên server
-ssh-copy-id -i ~/.ssh/id_rsa.pub user@your-server.com
+1. Sau khi push code, đi đến repository GitHub
+2. Click tab **"Actions"**
+3. Xem pipeline chạy realtime
+4. Khi hoàn thành, Docker image sẽ có sẵn tại: `docker.io/chuannef/travelviet:latest`
 
-# Copy private key content làm GitHub Secret
-cat ~/.ssh/id_rsa
-```
+## 🎉 Đó là tất cả!
 
-### 3. Setup Slack Webhook (Optional)
-```bash
-# Vào Slack workspace
-# Tạo app mới tại https://api.slack.com/apps
-# Tạo Incoming Webhook
-# Copy webhook URL
-```
-
-### 4. Configure GitHub Environments
-
-#### Staging Environment
-- Repository Settings > Environments
-- Tạo environment "staging"
-- Thêm protection rules nếu cần
-
-#### Production Environment
-- Tạo environment "production"
-- Bật "Required reviewers" để yêu cầu approve trước khi deploy
-- Thêm deployment branches rule
+Không cần server, không cần SSH keys, không cần cấu hình phức tạp. 
+Chỉ cần Docker Hub và 2 GitHub secrets!
 
 ## 🚀 Pipeline Features
 
