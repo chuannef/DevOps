@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelViet - Khám Phá Việt Nam</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><i class="fas fa-plane"></i> TravelViet</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#destinations">Điểm đến</a></li>
+                <li><a href="#tours">Tour</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Khám Phá Vẻ Đẹp Việt Nam</h2>
+                <p>Hành trình khám phá những cảnh đẹp tuyệt vời, văn hóa độc đáo và ẩm thực phong phú của đất nước Việt Nam</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary">Đặt Tour Ngay</button>
+                    <button class="cta-button secondary">Xem Video</button>
+                </div>
+            </div>
+            <div class="search-box">
+                <div class="search-form">
+                    <div class="search-item">
+                        <label>Điểm đến</label>
+                        <select>
+                            <option>Chọn điểm đến</option>
+                            <option>Hà Nội</option>
+                            <option>TP. Hồ Chí Minh</option>
+                            <option>Đà Nẵng</option>
+                            <option>Hạ Long</option>
+                            <option>Phú Quốc</option>
+                        </select>
+                    </div>
+                    <div class="search-item">
+                        <label>Ngày đi</label>
+                        <input type="date">
+                    </div>
+                    <div class="search-item">
+                        <label>Ngày về</label>
+                        <input type="date">
+                    </div>
+                    <div class="search-item">
+                        <label>Số người</label>
+                        <select>
+                            <option>1 người</option>
+                            <option>2 người</option>
+                            <option>3-5 người</option>
+                            <option>Nhóm lớn</option>
+                        </select>
+                    </div>
+                    <button class="search-button"><i class="fas fa-search"></i> Tìm Tour</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinations" class="destinations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Điểm Đến Hấp Dẫn</h2>
+                    <p>Khám phá những địa điểm du lịch nổi tiếng nhất Việt Nam</p>
+                </div>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1580880783375-0087a916d6ed?w=400" alt="Hạ Long Bay">
+                            <div class="destination-overlay">
+                                <div class="destination-info">
+                                    <h3>Vịnh Hạ Long</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> Quảng Ninh</p>
+                                    <span class="price">Từ 2.500.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400" alt="Hội An">
+                            <div class="destination-overlay">
+                                <div class="destination-info">
+                                    <h3>Phố Cổ Hội An</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> Quảng Nam</p>
+                                    <span class="price">Từ 1.800.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1551524164-687a55dd1126?w=400" alt="Sa Pa">
+                            <div class="destination-overlay">
+                                <div class="destination-info">
+                                    <h3>Ruộng Bậc Thang Sa Pa</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> Lào Cai</p>
+                                    <span class="price">Từ 2.200.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <div class="destination-image">
+                            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400" alt="Phú Quốc">
+                            <div class="destination-overlay">
+                                <div class="destination-info">
+                                    <h3>Đảo Ngọc Phú Quốc</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> Kiên Giang</p>
+                                    <span class="price">Từ 3.500.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tours" class="tours">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tour Du Lịch Hot</h2>
+                    <p>Những tour du lịch được yêu thích nhất hiện nay</p>
+                </div>
+                <div class="tours-grid">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400" alt="Tour Miền Bắc">
+                            <div class="tour-badge">Best Seller</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Tour Miền Bắc 4N3Đ</h3>
+                            <p class="tour-route">Hà Nội - Hạ Long - Sa Pa</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-clock"></i> 4 ngày 3 đêm</span>
+                                <span><i class="fas fa-users"></i> Nhóm 10-15 người</span>
+                            </div>
+                            <div class="tour-footer">
+                                <div class="tour-price">
+                                    <span class="old-price">8.500.000đ</span>
+                                    <span class="new-price">6.999.000đ</span>
+                                </div>
+                                <button class="book-btn">Đặt ngay</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400" alt="Tour Miền Trung">
+                            <div class="tour-badge">Hot Deal</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>Tour Miền Trung 3N2Đ</h3>
+                            <p class="tour-route">Đà Nẵng - Hội An - Huế</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-clock"></i> 3 ngày 2 đêm</span>
+                                <span><i class="fas fa-users"></i> Nhóm 8-12 người</span>
+                            </div>
+                            <div class="tour-footer">
+                                <div class="tour-price">
+                                    <span class="old-price">5.200.000đ</span>
+                                    <span class="new-price">4.599.000đ</span>
+                                </div>
+                                <button class="book-btn">Đặt ngay</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Tour Miền Nam">
+                        </div>
+                        <div class="tour-content">
+                            <h3>Tour Miền Nam 5N4Đ</h3>
+                            <p class="tour-route">TP.HCM - Cần Thơ - Phú Quốc</p>
+                            <div class="tour-features">
+                                <span><i class="fas fa-clock"></i> 5 ngày 4 đêm</span>
+                                <span><i class="fas fa-users"></i> Nhóm 12-18 người</span>
+                            </div>
+                            <div class="tour-footer">
+                                <div class="tour-price">
+                                    <span class="new-price">8.999.000đ</span>
+                                </div>
+                                <button class="book-btn">Đặt ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Dịch Vụ Du Lịch</h2>
+                    <p>Chúng tôi cung cấp đầy đủ các dịch vụ cho chuyến du lịch hoàn hảo</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <h3>Vé máy bay</h3>
+                        <p>Đặt vé máy bay giá tốt nhất với nhiều hãng hàng không uy tín</p>
+                        <ul>
+                            <li>Giá cạnh tranh</li>
+                            <li>Đổi/hủy linh hoạt</li>
+                            <li>Hỗ trợ 24/7</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Khách sạn</h3>
+                        <p>Hệ thống khách sạn từ bình dân đến cao cấp trên toàn quốc</p>
+                        <ul>
+                            <li>Đa dạng lựa chọn</li>
+                            <li>Giá ưu đãi</li>
+                            <li>Đánh giá thật</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Thuê xe</h3>
+                        <p>Dịch vụ thuê xe đa dạng từ xe máy đến xe du lịch cao cấp</p>
+                        <ul>
+                            <li>Xe chất lượng cao</li>
+                            <li>Tài xế kinh nghiệm</li>
+                            <li>An toàn bảo đảm</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Tour hướng dẫn</h3>
+                        <p>Hướng dẫn viên chuyên nghiệp với kiến thức sâu rộng</p>
+                        <ul>
+                            <li>HDV địa phương</li>
+                            <li>Kinh nghiệm lâu năm</li>
+                            <li>Nhiệt tình chu đáo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">15,000+</div>
+                        <div class="stat-label">Khách hàng hài lòng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Tour đã tổ chức</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Điểm đến</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Năm kinh nghiệm</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Liên Hệ Với Chúng Tôi</h2>
+                    <p>Hãy để chúng tôi giúp bạn lên kế hoạch cho chuyến du lịch trong mơ</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Địa chỉ</h4>
+                                <p>123 Đường Nguyễn Huệ, Quận 1, TP.HCM</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Điện thoại</h4>
+                                <p>Hotline: 1900 1234<br>Mobile: 0901 234 567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>info@travelviet.com<br>booking@travelviet.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Giờ làm việc</h4>
+                                <p>T2-T6: 8:00 - 18:00<br>T7-CN: 8:00 - 17:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-row">
+                                <input type="text" placeholder="Họ và tên *" required>
+                                <input type="email" placeholder="Email *" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="tel" placeholder="Số điện thoại *" required>
+                                <select required>
+                                    <option>Loại tour quan tâm</option>
+                                    <option>Tour trong nước</option>
+                                    <option>Tour nước ngoài</option>
+                                    <option>Tour doanh nghiệp</option>
+                                    <option>Khác</option>
+                                </select>
+                            </div>
+                            <textarea placeholder="Tin nhắn của bạn..." rows="5"></textarea>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Gửi yêu cầu tư vấn
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-plane"></i> TravelViet</h3>
+                        <p>Đồng hành cùng bạn khám phá vẻ đẹp Việt Nam</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Điểm đến hot</h4>
+                    <ul>
+                        <li><a href="#">Hạ Long Bay</a></li>
+                        <li><a href="#">Phú Quốc</a></li>
+                        <li><a href="#">Đà Lạt</a></li>
+                        <li><a href="#">Sa Pa</a></li>
+                        <li><a href="#">Hội An</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Dịch vụ</h4>
+                    <ul>
+                        <li><a href="#">Tour trong nước</a></li>
+                        <li><a href="#">Tour nước ngoài</a></li>
+                        <li><a href="#">Vé máy bay</a></li>
+                        <li><a href="#">Đặt khách sạn</a></li>
+                        <li><a href="#">Thuê xe</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Hướng dẫn đặt tour</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelViet. Tất cả quyền được bảo lưu.</p>
+                <p>Giấy phép kinh doanh lữ hành quốc tế số: 01-234/2025-TCDL-GP LHQT</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

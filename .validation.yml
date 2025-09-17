@@ -1,0 +1,31 @@
+# .github/workflows/validate.yml
+# HTML và CSS validation configuration
+
+# This file configures validation rules for the CI pipeline
+# Used by html5validator-action and other validation tools
+
+validation:
+  html:
+    # HTML5 validation rules
+    - check_doctype: true
+    - check_lang: true
+    - check_meta_charset: true
+    - check_viewport: true
+    
+  css:
+    # CSS validation rules
+    - check_syntax: true
+    - check_vendor_prefixes: true
+    - check_unused_selectors: false
+    
+  accessibility:
+    # Basic accessibility checks
+    - check_alt_attributes: true
+    - check_heading_hierarchy: true
+    - check_color_contrast: false # Would need more complex tools
+    
+  performance:
+    # Basic performance checks
+    - check_image_optimization: false # Would need image analysis
+    - check_css_minification: false
+    - check_js_minification: false

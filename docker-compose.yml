@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  travelviet-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: travelviet:latest
+    container_name: travelviet-website
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    restart: unless-stopped
+    networks:
+      - travelviet-network
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  travelviet-network:
+    driver: bridge
+
+# Optional: Add volume for persistent logs
+volumes:
+  nginx-logs:
+    driver: local
