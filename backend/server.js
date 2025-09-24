@@ -83,7 +83,8 @@ process.on('SIGTERM', () => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 TravelViet API server running on port ${PORT}`);
   console.log(`📖 Health check: http://localhost:${PORT}/api/health`);
+  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
