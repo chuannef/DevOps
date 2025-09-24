@@ -19,6 +19,21 @@
                 <li><a href="#tours">Tour</a></li>
                 <li><a href="#services">Dịch vụ</a></li>
                 <li><a href="#contact">Liên hệ</a></li>
+                <li class="auth-buttons">
+                    <a href="#" id="loginBtn" class="btn-login">Đăng nhập</a>
+                    <a href="#" id="registerBtn" class="btn-register">Đăng ký</a>
+                </li>
+                <li class="user-menu" id="userMenu" style="display: none;">
+                    <a href="#" id="userProfile" class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#" id="bookingsLink"><i class="fas fa-calendar"></i> Booking của tôi</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                    </div>
+                </li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -419,6 +434,144 @@
         </div>
     </footer>
 
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đăng nhập</h2>
+                <span class="close" data-modal="loginModal">&times;</span>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mật khẩu</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                </button>
+                <div class="auth-switch">
+                    <p>Chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký ngay</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đăng ký</h2>
+                <span class="close" data-modal="registerModal">&times;</span>
+            </div>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerFullName">Họ và tên</label>
+                    <input type="text" id="registerFullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Số điện thoại</label>
+                    <input type="tel" id="registerPhone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Mật khẩu</label>
+                    <input type="password" id="registerPassword" name="password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-user-plus"></i> Đăng ký
+                </button>
+                <div class="auth-switch">
+                    <p>Đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thông tin cá nhân</h2>
+                <span class="close" data-modal="profileModal">&times;</span>
+            </div>
+            <form id="profileForm" class="auth-form">
+                <div class="form-group">
+                    <label for="profileFullName">Họ và tên</label>
+                    <input type="text" id="profileFullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="profileEmail">Email</label>
+                    <input type="email" id="profileEmail" name="email" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="profilePhone">Số điện thoại</label>
+                    <input type="tel" id="profilePhone" name="phone">
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-save"></i> Cập nhật
+                </button>
+            </form>
+            
+            <div class="profile-actions">
+                <button id="changePasswordBtn" class="btn-secondary">
+                    <i class="fas fa-lock"></i> Đổi mật khẩu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đổi mật khẩu</h2>
+                <span class="close" data-modal="changePasswordModal">&times;</span>
+            </div>
+            <form id="changePasswordForm" class="auth-form">
+                <div class="form-group">
+                    <label for="currentPassword">Mật khẩu hiện tại</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Mật khẩu mới</label>
+                    <input type="password" id="newPassword" name="newPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
+                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-key"></i> Đổi mật khẩu
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification" style="display: none;">
+        <div class="notification-content">
+            <span id="notificationText"></span>
+            <button id="closeNotification">&times;</button>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
     <script>
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
@@ -433,9 +586,16 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                // Skip empty or just "#" hrefs
+                if (targetId && targetId.length > 1) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
             });
         });
     </script>
